@@ -1,0 +1,8 @@
+{
+    "prettier.tabWidth": 4,
+    "prettier.bracketSpacing": false,
+    "php.validate.run": "onType",
+    "eslint.autoFixOnSave": true,
+    "git.promptToSaveFilesBeforeCommit": "never",
+    "html.format.wrapLineLength": 0
+}
