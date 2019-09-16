@@ -1,11 +1,11 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import './styles.scss';
 
 function Filter() {
     return (
-        <div>
-            <p> Filter </p>{' '}
-        </div>
+        <Fragment>
+            <p> Filter </p>
+        </Fragment>
     );
 }
 
