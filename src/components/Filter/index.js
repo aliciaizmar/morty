@@ -1,5 +1,5 @@
 import React, {Fragment} from 'react';
-import './styles.scss';
+import styles from '../../styles/style.scss';
 
 function Filter(props) {
 	const {searchPeopleName, filterByName, filterByStatus} = props;

@@ -1,10 +1,11 @@
 import React, {Fragment} from 'react';
-import './styles.scss';
+//import './styles.scss';
 import CardList from '../CardList';
 import Filter from '../Filter';
 import CardDetail from '../CardDetail';
 import serviceFetch from '../../services/serviceFetch';
 import {Route, Switch} from 'react-router-dom';
+import styles from '../../styles/style.scss';
 
 class App extends React.Component {
 	constructor(props) {
@@ -70,7 +71,6 @@ class App extends React.Component {
 							.toLowerCase()
 							.includes(person.status.toLowerCase());
 			});
-
 		// .sort((a, b) => {
 		// 	return a.id - b.id;
 		// });
@@ -91,12 +91,12 @@ class App extends React.Component {
 			searchStatus
 		} = this.state;
 		return (
-			<div className="wrapper">
+			<div className={styles.wrapper}>
 				{isFetching ? (
-					<div className="loading"> Loading... </div>
+					<div className={styles.loading}> Loading... </div>
 				) : (
 					<Fragment>
-						<main className="main__content">
+						<main className={styles.mainContent}>
 							<Switch>
 								<Route
 									exact
