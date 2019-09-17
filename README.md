@@ -1,4 +1,4 @@
-# morty
+## Find Rick and Morty
 Filter people from Rick and Morty by name and status (dead, alive).
 This app is creaated with JS and React
 
