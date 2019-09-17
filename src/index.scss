@@ -5,7 +5,7 @@
     margin: 0;
     box-sizing: border-box;
   }
-  a{
+  a {
     text-decoration: none;
     color: inherit;
   }
@@ -31,13 +31,5 @@
     color: $color-text;
     min-height: 100vh;
     font-family: $font-family;
+    background: url(./images/container_bg.png);    
   }
-  // .wrapper {
-  //   margin: 0 auto;
-  //   max-width: 1200px;
-  // }
-  // .loading {
-  //   text-align: center;
-  //   margin-top:2em;
-  // }
-  

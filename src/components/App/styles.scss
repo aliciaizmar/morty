@@ -1,8 +1,19 @@
+@import '../../styles/variables';
+
 .wrapper {
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: 1000px;
+  padding: 3em 0;
+  
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 20px;
+  }
 }
+
 .loading {
   text-align: center;
   margin-top:2em;
+  font-weight: bold;
+  text-transform: uppercase;
 }

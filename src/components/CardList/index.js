@@ -8,8 +8,7 @@ function CardList(props) {
 	const {peopleData} = props;
 
 	return (
-		<Fragment>
-			<nav className={styles.mainHeader}>{/* <h1>Rick and Morty</h1> */}</nav>
+		<Fragment>			
 			<div className={styles.hidden}>
 				{peopleData.length === 0 ? (
 					<p>No founds</p>
@@ -18,20 +17,24 @@ function CardList(props) {
 				)}
 			</div>
 			<ul className={styles.list}>
-				{peopleData.map((person) => {
-					return (
-						<li className={styles.listItem} key={person.id}>
-							<Link to={`/detail/${person.id}`}>
-								<Card
-									id={person.id}
-									name={person.name}
-									// src={person.image}
-									status={person.status}
-								/>
-							</Link>
-						</li>
-					);
-				})}
+					{peopleData.length === 0 ? (
+						<p className={styles.nouser}>We can't find that name</p>
+					): (
+						peopleData.map((person) => {
+							return (
+								<li className={styles.listItem} key={person.id}>
+									<Link to={`/detail/${person.id}`}>
+										<Card
+											id={person.id}
+											name={person.name}
+											src={person.image}
+											status={person.status}
+										/>
+									</Link>
+								</li>
+							);
+						})
+					)}
 			</ul>
 		</Fragment>
 	);

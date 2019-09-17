@@ -1,0 +1,42 @@
+@import '../../styles/variables';
+
+.form {
+    margin: 0 auto;
+    text-align: center;
+
+    &__label{
+        display: block;
+    }
+
+    &__input-text {
+        box-shadow: 1px 1px 10px $color-gray-second;
+        text-align: center;
+        padding: 10px 0;
+        width: 100%;
+        border: 0;
+        margin-bottom: 30px;  
+        font-size: 1em;
+        
+        @media (min-width: 768px) {
+            width: 570px;
+        }
+    }
+    
+    &__radio {
+        background: $color-white;
+        box-shadow: 1px 1px 10px $color-gray-second;
+        padding: 10px 0;
+
+        fieldset {
+            border: 0;
+
+            label {
+                margin-right: 1em;
+
+                &:last-child {
+                    margin: 0;
+                }
+            }
+        }
+    }
+} 

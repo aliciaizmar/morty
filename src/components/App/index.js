@@ -1,5 +1,4 @@
 import React, {Fragment} from 'react';
-//import './styles.scss';
 import CardList from '../CardList';
 import Filter from '../Filter';
 import CardDetail from '../CardDetail';
@@ -71,9 +70,6 @@ class App extends React.Component {
 							.toLowerCase()
 							.includes(person.status.toLowerCase());
 			});
-		// .sort((a, b) => {
-		// 	return a.id - b.id;
-		// });
 	};
 
 	findId = (id) => {
@@ -96,6 +92,7 @@ class App extends React.Component {
 					<div className={styles.loading}> Loading... </div>
 				) : (
 					<Fragment>
+						<nav className={styles.hidden}><h1>Rick and Morty</h1></nav>
 						<main className={styles.mainContent}>
 							<Switch>
 								<Route

@@ -1,12 +1,71 @@
-.list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+@import '../../styles/variables';
 
-    &__item {
-        border: solid 1px;
+.link__back {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    display: inline-flex;
+    background: $color-white;
+    box-shadow: 1px 1px 10px $color-gray-second;
+    border-radius: 2px;
+}
+
+.main__content {
+    .detail__main {
+        max-width: 500px;
+        margin: 0 auto;
     }
+}
+
+.detail {
+
+    &__main {
+        background: $-color-gray-third;
+        padding: 20px;
+        margin-top: 20px;
+        border-radius: 1em;
+    }
+
     &__name {
-        font-size: 15px
+        text-align: center;
+        display: flex;
+        justify-content: center;
+
+        & > span {
+            flex-basis: auto;
+            margin:5px
+        }
+    }
+
+    &__image {
+        border-radius: 1em;
+        width: 50%;
+        padding: 0.5em;
+        margin: 0 auto;
+    }
+}
+
+.details {
+
+    &__list-title {
+        background: $color-blue;
+        color: $color-white;
+        padding: 8px;
+        font-weight: bold;
+        margin: 20px 0 5px;
+    }
+}
+
+.list {
+
+    &__episodes {
+        display: flex;
+        flex-wrap: wrap;
+
+        & > li{
+            flex-basis: auto;
+            margin:5px;
+            background: $color-white;
+        }
     }
 }

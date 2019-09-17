@@ -6,28 +6,29 @@ function Filter(props) {
 
 	return (
 		<Fragment>
-			<form className="form">
-				<div className="form__name">
-					<label className="form__label" htmlFor="name">
+			<form className={styles.form}>
+				<div className={styles.form__name}>
+					<label className={styles.hidden} htmlFor="name">
 						Filter by name
 					</label>
 					<input
-						className="form__input-text"
+						className={styles.form__input_text}
 						type="text"
 						id="name"
 						name="name"
 						value={searchPeopleName}
 						onChange={filterByName}
+						placeholder='Filter by name'
 					/>
 				</div>
-				<div className="form__radio">
+				<div className={styles.form__radio}>
 					<fieldset>
-						<legend>Status: </legend>
+						<legend className={styles.hidden}>Status: </legend>
 						<label htmlFor="alive">
 							<input
 								type="radio"
 								name="status"
-								className="form__input-radio"
+								className={styles.form__input_radio}
 								id="alive"
 								value="alive"
 								onChange={filterByStatus}
@@ -38,7 +39,7 @@ function Filter(props) {
 							<input
 								type="radio"
 								name="status"
-								className="form__input-radio"
+								className={styles.form__input_radio}
 								id="dead"
 								value="dead"
 								onClick={filterByStatus}
@@ -49,7 +50,7 @@ function Filter(props) {
 							<input
 								type="radio"
 								name="status"
-								className="form__input-radio"
+								className={styles.form__input_radio}
 								id="unknown"
 								value="unknown"
 								onClick={filterByStatus}
@@ -60,7 +61,7 @@ function Filter(props) {
 							<input
 								type="radio"
 								name="status"
-								className="form__input-radio"
+								className={styles.form__input_radio}
 								id="all"
 								value="all"
 								onClick={filterByStatus}

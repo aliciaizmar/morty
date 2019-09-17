@@ -1,20 +1,17 @@
-import React, {Fragment} from 'react';
+import React, { Fragment } from 'react';
 import './styles.scss';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { FaAngleLeft } from 'react-icons/fa';
 import styles from '../../styles/style.scss';
 
 function CardDetail(props) {
-	const {match} = props;
+	const { match } = props;
 
 	return (
 		<Fragment>
 			<Link to="/" title="Back">
 				<div className={styles.link__back}>
-					<span>
-						<FaAngleLeft className={styles.icon} />
-						Back
-					</span>
+					<FaAngleLeft className={styles.icon} /> Back
 				</div>
 			</Link>
 
@@ -28,10 +25,10 @@ function CardDetail(props) {
 					<div className={styles.detail__content}>
 						<img
 							className={styles.detail__image}
-							// src={match.image}
+							src={match.image}
 							alt={match.name}
 						/>
-						<h3 className={styles.detail__title}>Aditional Info</h3>
+						<h3 className={styles.hidden}>Aditional Info</h3>
 						<ul className={styles.details__list}>
 							<li className={styles.details__list_title}> Gender</li>
 							<li className={styles.details__list_item}>
@@ -44,24 +41,24 @@ function CardDetail(props) {
 								{match.species}
 							</li>
 							<li className={styles.details__list_title}>
-								Appears in episode:
-								<ul className={styles.list__episodes}>
-									{match.episode.map((episode, index) => {
-										//remove url and appear only the number of episodes and replace slash with empty string
-										//const newEpisode = episode.slice(-2).replace('/', '');
-										const newEpisode = episode.slice(40);
-										return (
-											<li key={index}> {newEpisode}</li>
-										);
-									})}
-								</ul>
+								Appears in episode
 							</li>
+
+						</ul>
+						<ul className={styles.list__episodes}>
+							{match.episode.map((episode, index) => {
+
+								const newEpisode = episode.slice(40);
+								return (
+									<li key={index}> {newEpisode} </li>
+								);
+							})}
 						</ul>
 					</div>
 				</div>
 			) : (
-				<p>This character doesn't exists</p>
-			)}
+					<p className={styles.nouser}>This character doesn't exists</p>
+				)}
 		</Fragment>
 	);
 }

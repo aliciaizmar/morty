@@ -1,0 +1,42 @@
+@import '../../styles/variables';
+
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 1.5em;
+
+    &__name {
+        font-size: 1.3em;
+    }
+    &__image {
+        width: 50%;
+        border-radius: 1em;
+    }
+    &__item {
+        margin-bottom: 2em;
+        background: $-color-gray-third;
+        padding: 2em 0;
+        border-radius: 1em;
+        
+        a {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+    &__others {
+        padding: 10px 0;
+    }
+    &__id {
+        margin-right: 8px;
+    }
+    &__id, &__status {
+        border-radius: 10px;
+        background: -webkit-linear-gradient(180deg, #9bcc50 50%, #9bcc50 50%);
+        padding: 4px 10px;
+        font-size: 12px;
+        font-weight: bold;
+    }
+}
