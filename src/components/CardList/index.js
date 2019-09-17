@@ -5,13 +5,17 @@ import {Link} from 'react-router-dom';
 
 function CardList(props) {
 	const {peopleData} = props;
-    //console.log(peopleData.length)
 
 	return (
 		<Fragment>
-			<nav className="main__header">
-				{/* <h1>Rick and Morty</h1> */}
-			</nav>
+			<nav className="main__header">{/* <h1>Rick and Morty</h1> */}</nav>
+			<div className="hidden">
+				{peopleData.length === 0 ? (
+					<p>No founds</p>
+				) : (
+					<p>List of characters: {peopleData.length}</p>
+				)}
+			</div>
 			<ul className="list">
 				{peopleData.map((person) => {
 					return (

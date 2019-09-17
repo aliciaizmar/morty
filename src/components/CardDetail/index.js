@@ -30,9 +30,7 @@ function CardDetail(props) {
 							// src={match.image}
 							alt={match.name}
 						/>
-						<h3 className="detail__title">
-							Aditional Info CARDETAIL
-						</h3>
+						<h3 className="detail__title">Aditional Info</h3>
 						<ul className="details__list">
 							<li className="details__list-title"> Gender</li>
 							<li className="details__list-item">
@@ -45,7 +43,7 @@ function CardDetail(props) {
 								{match.species}
 							</li>
 							<li className="details__list-title">
-								Number of episodes
+								Appears in episode:
 								<ul className="list__episodes">
 									{match.episode.map((episode, index) => {
 										//remove url and appear only the number of episodes and replace slash with empty string

@@ -46,9 +46,16 @@ class App extends React.Component {
 		});
 	};
 
+	handlerSearchStatus = (e) => {
+		const {value} = e.target;
+		this.setState({
+			searchStatus: value
+		});
+	};
+
 	//filter every input
 	inputFilters = () => {
-		const {searchPeopleName, peopleData} = this.state;
+		const {searchPeopleName, peopleData, searchStatus} = this.state;
 
 		return peopleData
 			.filter((person) => {
@@ -56,9 +63,17 @@ class App extends React.Component {
 					.toLowerCase()
 					.includes(searchPeopleName.toLowerCase());
 			})
-			.sort((a, b) => {
-				return a.id - b.id;
+			.filter((person) => {
+				return !searchStatus || searchStatus.includes('all')
+					? true
+					: searchStatus
+							.toLowerCase()
+							.includes(person.status.toLowerCase());
 			});
+
+		// .sort((a, b) => {
+		// 	return a.id - b.id;
+		// });
 	};
 
 	findId = (id) => {
@@ -69,7 +84,12 @@ class App extends React.Component {
 	};
 
 	render() {
-		const {isFetching, peopleData, searchPeopleName} = this.state;
+		const {
+			isFetching,
+			peopleData,
+			searchPeopleName,
+			searchStatus
+		} = this.state;
 		return (
 			<div className="wrapper">
 				{isFetching ? (
@@ -87,12 +107,16 @@ class App extends React.Component {
 												filterByName={
 													this.handlerSearchName
 												}
+												filterByStatus={
+													this.handlerSearchStatus
+												}
 												searchPeopleName={
 													searchPeopleName
 												}
+												searchStatus={searchStatus}
 											/>
 											<CardList
-                                                peopleData={this.inputFilters()}
+												peopleData={this.inputFilters()}
 											/>
 										</Fragment>
 									)}
