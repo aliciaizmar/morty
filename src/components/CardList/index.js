@@ -10,7 +10,7 @@ function CardList(props) {
 	return (
 		<Fragment>
 			<nav className="main__header">
-				<h1>Rick and Morty</h1>
+				{/* <h1>Rick and Morty</h1> */}
 			</nav>
 			<ul className="list">
 				{peopleData.map((person) => {
@@ -22,7 +22,6 @@ function CardList(props) {
 									name={person.name}
 									// src={person.image}
 									status={person.status}
-									//peopleData={peopleData}
 								/>
 							</Link>
 						</li>

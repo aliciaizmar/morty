@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, {Fragment} from 'react';
 import './styles.scss';
 import CardList from '../CardList';
 import Filter from '../Filter';
@@ -12,9 +12,9 @@ class App extends React.Component {
 
 		this.state = {
 			peopleData: [],
-            isFetching: true,
-            searcPeopleName: '',
-            searchStatus: ''
+			isFetching: true,
+			searchPeopleName: '',
+			searchStatus: ''
 		};
 	}
 
@@ -39,15 +39,37 @@ class App extends React.Component {
 		});
 	}
 
+	handlerSearchName = (e) => {
+		const {value} = e.target;
+		this.setState({
+			searchPeopleName: value
+		});
+	};
+
+	//filter every input
+	inputFilters = () => {
+		const {searchPeopleName, peopleData} = this.state;
+
+		return peopleData
+			.filter((person) => {
+				return person.name
+					.toLowerCase()
+					.includes(searchPeopleName.toLowerCase());
+			})
+			.sort((a, b) => {
+				return a.id - b.id;
+			});
+	};
+
 	findId = (id) => {
-        const { peopleData } = this.state;        
+		const {peopleData} = this.state;
 		return peopleData.find((people) => {
 			return people.id === parseInt(id);
 		});
 	};
 
 	render() {
-        const { isFetching, peopleData } = this.state;
+		const {isFetching, peopleData, searchPeopleName} = this.state;
 		return (
 			<div className="wrapper">
 				{isFetching ? (
@@ -60,9 +82,18 @@ class App extends React.Component {
 									exact
 									path="/"
 									render={() => (
-                                        <Fragment>
-                                            <Filter />
-											<CardList peopleData={peopleData} />											
+										<Fragment>
+											<Filter
+												filterByName={
+													this.handlerSearchName
+												}
+												searchPeopleName={
+													searchPeopleName
+												}
+											/>
+											<CardList
+                                                peopleData={this.inputFilters()}
+											/>
 										</Fragment>
 									)}
 								/>

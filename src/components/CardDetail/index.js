@@ -4,11 +4,8 @@ import {Link} from 'react-router-dom';
 import {FaAngleLeft} from 'react-icons/fa';
 
 function CardDetail(props) {
-	const {match, peopleData} = props;
-	console.log(match);
-	console.log('cardetail', props);
+	const {match} = props;
 
-	// console.log('detail:', match);
 	return (
 		<Fragment>
 			<Link to="/">
@@ -50,11 +47,13 @@ function CardDetail(props) {
 							<li className="details__list-title">
 								Number of episodes
 								<ul className="list__episodes">
-                                    {match.episode.map((episode, index) => {
-                                        //remove url and appear only the number of episodes and replace slash with empty string
-                                        //const newEpisode = episode.slice(-2).replace('/', '');
-                                        const newEpisode = episode.slice(40);
-                                        return <li key={index}> {newEpisode}</li>                                        
+									{match.episode.map((episode, index) => {
+										//remove url and appear only the number of episodes and replace slash with empty string
+										//const newEpisode = episode.slice(-2).replace('/', '');
+										const newEpisode = episode.slice(40);
+										return (
+											<li key={index}> {newEpisode}</li>
+										);
 									})}
 								</ul>
 							</li>
