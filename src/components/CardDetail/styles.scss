@@ -1,0 +1,12 @@
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    &__item {
+        border: solid 1px;
+    }
+    &__name {
+        font-size: 15px
+    }
+}
