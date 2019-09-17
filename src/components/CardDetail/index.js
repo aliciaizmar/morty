@@ -6,6 +6,7 @@ import styles from '../../styles/style.scss';
 
 function CardDetail(props) {
 	const { match } = props;
+	console.log(match)
 
 	return (
 		<Fragment>
@@ -35,7 +36,7 @@ function CardDetail(props) {
 								{match.gender}
 							</li>
 							<li className={styles.details__list_title}>Origin</li>
-							<li className={styles.details__list_item}>{match.name}</li>
+							<li className={styles.details__list_item}>{match.origin.name}</li>
 							<li className={styles.details__list_title}>Species</li>
 							<li className={styles.details__list_item}>
 								{match.species}
