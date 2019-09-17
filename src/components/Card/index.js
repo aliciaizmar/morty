@@ -15,7 +15,6 @@ function Card(props) {
 				<span className="list__status">{status}</span>
 			</div>
 
-			{/* <CardDetail peopleData={peopleData} /> */}
 		</Fragment>
 	);
 }

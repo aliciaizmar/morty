@@ -1,4 +1,4 @@
-import React, {Fragment} from 'react';
+import React, { Fragment } from 'react';
 import './styles.scss';
 import CardList from '../CardList';
 import Filter from '../Filter';
